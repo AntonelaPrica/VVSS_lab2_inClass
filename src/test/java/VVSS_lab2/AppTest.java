@@ -41,4 +41,21 @@ public class AppTest
 
         assertTrue( true );
     }
+
+    @Test
+    public void addStudentTest2()
+    {
+        studentValidator = new StudentValidator();
+        studentRepo = new StudentRepo(studentValidator);
+
+        Student student = new Student("","Stud1", 10,"stud1@test.com", "Prof");
+        try{
+            studentRepo.save(student);
+            // if error was not thrown => is not correct since id is empty
+            fail();
+        } catch (ValidatorException e){
+            // student with empty id should not be added
+            assertEquals(studentRepo.size(), 0);
+        }
+    }
 }

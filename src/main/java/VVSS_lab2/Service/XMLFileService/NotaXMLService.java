@@ -8,8 +8,6 @@ import VVSS_lab2.Repository.XMLFileRepository.NotaXMLRepo;
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.security.Provider;
-import java.time.LocalDateTime;
 
 public class NotaXMLService extends AbstractXMLService<Integer, Nota> {
     private NotaXMLRepo xmlrepo;
@@ -47,7 +45,7 @@ public class NotaXMLService extends AbstractXMLService<Integer, Nota> {
 
     @Override
     protected Nota extractEntity(String[] params){
-        Nota n=new Nota(Integer.parseInt(params[0]),params[1],Integer.parseInt(params[2]),Double.parseDouble(params[3]), LocalDateTime.parse(params[4]));
+        Nota n=new Nota(Integer.parseInt(params[0]),params[1],Integer.parseInt(params[2]),Double.parseDouble(params[3]));
         return n;
 
     }

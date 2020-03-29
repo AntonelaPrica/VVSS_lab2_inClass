@@ -13,6 +13,10 @@ public class Student implements HasId<String> {
         this.setEmail(email);
         this.setIndrumator(indrumator);
     }
+
+    public Student() {
+    }
+
     @Override
     public String getId() {
         return id;

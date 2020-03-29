@@ -1,7 +1,6 @@
 package VVSS_lab2.Domain;
 
 
-import java.time.LocalDateTime;
 
 public class Nota implements HasId<Integer> {
 
@@ -10,14 +9,13 @@ public class Nota implements HasId<Integer> {
     private String studentId;
     private Integer temaLabId;
     private double valoare;
-    private LocalDateTime ldt;
 
-    public  Nota(Integer idNota,String studentId,Integer temaLabId,double valoare,LocalDateTime ldt){
+
+    public  Nota(Integer idNota,String studentId,Integer temaLabId,double valoare){
         this.idNota=idNota;
         this.studentId=studentId;
         this.temaLabId=temaLabId;
         this.valoare=valoare;
-        this.ldt=ldt;
     }
 
     @Override
@@ -54,16 +52,8 @@ public class Nota implements HasId<Integer> {
         this.valoare = valoare;
     }
 
-    public LocalDateTime getLdt() {
-        return ldt;
-    }
-
-    public void setLdt(LocalDateTime ldt) {
-        this.ldt = ldt;
-    }
-
     @Override
     public String toString(){
-        return this.idNota+"#"+this.studentId+"#"+this.temaLabId+"#"+this.valoare+"#"+this.ldt;
+        return this.idNota+"#"+this.studentId+"#"+this.temaLabId+"#"+this.valoare;
     }
 }

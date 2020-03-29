@@ -23,7 +23,6 @@ public class NotaXMLRepo extends AbstractXMLRepo<Integer, Nota> {
         e.appendChild(createElement("idStudent", document, n.getStudentId()));
         e.appendChild(createElement("idTemaLab", document, Integer.toString(n.getTemaLabId())));
         e.appendChild(createElement("valoare", document, Double.toString(n.getValoare())));
-        e.appendChild(createElement("data", document, n.getLdt().toString()));
         return e;
     }
 
@@ -48,7 +47,7 @@ public class NotaXMLRepo extends AbstractXMLRepo<Integer, Nota> {
                 .item(0)
                 .getTextContent();
 
-        return new Nota(Integer.parseInt(id),idStudent,Integer.parseInt(idTemaLab),Double.parseDouble(val), LocalDateTime.parse(data));
+        return new Nota(Integer.parseInt(id),idStudent,Integer.parseInt(idTemaLab),Double.parseDouble(val));
     }
 
 

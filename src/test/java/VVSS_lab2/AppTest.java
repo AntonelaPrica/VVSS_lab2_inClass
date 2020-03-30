@@ -3,6 +3,7 @@ package VVSS_lab2;
 import VVSS_lab2.Domain.Student;
 import VVSS_lab2.Exceptions.ValidatorException;
 import VVSS_lab2.Repository.MemoryRepository.StudentRepo;
+import VVSS_lab2.Service.TxtFileService.StudentService;
 import VVSS_lab2.Validator.StudentValidator;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,6 +19,8 @@ public class AppTest {
      */
     private StudentRepo studentRepo;
     private StudentValidator studentValidator;
+
+    private StudentService studentService;
 
     @Before
     public void setUp()
@@ -107,26 +110,109 @@ public class AppTest {
 
     @Test
     public void addStudent_TC10() {
+        studentRepo = new StudentRepo(studentValidator);
+        Student stud = new Student("1", "Rus Mihai", 936, "2", "Prof. Maria");
+        try {
+            studentRepo.save(stud);
+            // if error was not thrown => is not correct since the email does not have the type string
+            fail();
+        } catch (ValidatorException e) {
+            // student with empty id should not be added
+            assertEquals(studentRepo.size(), 0);
+        }
     }
     @Test
     public void addStudent_TC11() {
+        studentRepo = new StudentRepo(studentValidator);
+        Student stud = new Student("1", "Rus Mihai", 936, "rm@yahoo.com", "Prof. Maria");
+        Student stud_new = new Student("2", "Rus Maria", 936, "rm@yahoo.com", "Prof. Maria");
+        try {
+            studentRepo.save(stud);
+
+            studentRepo.save(stud_new);
+            // if error was not thrown => is not correct since the email already exists
+            fail();
+        } catch (ValidatorException e) {
+            // student with empty id should not be added
+            assertEquals(studentRepo.size(), 0);
+        }
     }
     @Test
     public void addStudent_TC12() {
+        studentRepo = new StudentRepo(studentValidator);
+        Student stud = new Student("1", "Rus Mihai", 936, "", "Prof. Maria");
+        try {
+            studentRepo.save(stud);
+            // if error was not thrown => is not correct since the email is empty
+            fail();
+        } catch (ValidatorException e) {
+            // student with empty id should not be added
+            assertEquals(studentRepo.size(), 0);
+        }
     }
     @Test
     public void addStudent_TC13() {
+        studentRepo = new StudentRepo(studentValidator);
+        Student stud = new Student("1", "Rus Mihai", 936, "email", "Prof. Maria");
+        try {
+            studentRepo.save(stud);
+            // if error was not thrown => is not correct since the email does not have the right format: a-z@a-z.a-z
+            fail();
+        } catch (ValidatorException | NullPointerException e) {
+            // student with empty id should not be added
+            assertEquals(studentRepo.size(), 0);
+        }
     }
     @Test
     public void addStudent_TC14() {
+        studentRepo = new StudentRepo(studentValidator);
+        Student stud = new Student("1", "Rus Mihai", 936, null, "Prof. Maria");
+        try {
+            studentRepo.save(stud);
+            // if error was not thrown => is not correct since the email is null
+            fail();
+        } catch (ValidatorException | NullPointerException e) {
+            // student with empty id should not be added
+            assertEquals(studentRepo.size(), 0);
+        }
     }
     @Test
     public void addStudent_TC15() {
+        studentRepo = new StudentRepo(studentValidator);
+        Student stud = new Student("1", "Rus Mihai", 936, "email@yahoo.com", "123");
+        try {
+            studentRepo.save(stud);
+            // if error was not thrown => is not correct since the coordinator type is integer not string
+            fail();
+        } catch (ValidatorException e) {
+            // student with empty id should not be added
+            assertEquals(studentRepo.size(), 0);
+        }
     }
     @Test
     public void addStudent_TC16() {
+        studentRepo = new StudentRepo(studentValidator);
+        Student stud = new Student("1", "Rus Mihai", 936, "email@yahoo.com", "");
+        try {
+            studentRepo.save(stud);
+            // if error was not thrown => is not correct since the coordinator is empty
+            fail();
+        } catch (ValidatorException e) {
+            // student with empty id should not be added
+            assertEquals(studentRepo.size(), 0);
+        }
     }
     @Test
     public void addStudent_TC17() {
+        studentRepo = new StudentRepo(studentValidator);
+        Student stud = new Student("1", "Rus Mihai", 936, "email@yahoo.com", null);
+        try {
+            studentRepo.save(stud);
+            // if error was not thrown => is not correct since coordinator is null
+            fail();
+        } catch (ValidatorException e) {
+            // student with empty id should not be added
+            assertEquals(studentRepo.size(), 0);
+        }
     }
 }

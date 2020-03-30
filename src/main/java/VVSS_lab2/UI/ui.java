@@ -54,7 +54,7 @@ public class ui {
         String[] params={id,nume,grupa,email,prof};
         try{
             stdSrv.add(params);
-        }catch (ValidatorException ex){
+        } catch (ValidatorException ex){
             System.out.println(ex.getMessage());
         }
 

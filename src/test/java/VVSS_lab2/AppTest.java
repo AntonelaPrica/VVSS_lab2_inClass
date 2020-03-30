@@ -8,6 +8,8 @@ import VVSS_lab2.Validator.StudentValidator;
 import org.junit.Before;
 import org.junit.Test;
 
+import javax.xml.validation.Validator;
+
 import static org.junit.Assert.*;
 
 /**
@@ -65,7 +67,7 @@ public class AppTest {
 
     @Test
     public void addStudent_TC1() {
-        Student stud = new Student("1", "Rus Mihai", 936, "email@yahoo.com", "Pop Maria");
+        Student stud = new Student("1", "Rus Mihai", 1, "rm@yahoo.com", "Prof. Maria");
         try {
             studentRepo.save(stud);
         } catch (ValidatorException e) {
@@ -76,36 +78,113 @@ public class AppTest {
 
     @Test
     public void addStudent_TC2() {
-        int studentId = 2;
-        Student stud = new Student();
+        Student stud = new Student("1", "Rus Mihai", 1, "rm@yahoo.com", "Prof. Maria");
+        try {
+            studentRepo.save(stud);
+            if (!(stud.getNume() instanceof String))
+                assertEquals(studentRepo.size(), 0);
+
+        } catch (ValidatorException e) {
+            assertEquals(studentRepo.size(), 0);
+        }
+        assertEquals(studentRepo.size(), 1);
     }
 
     @Test
     public void addStudent_TC3() {
+        studentRepo = new StudentRepo(studentValidator);
+        Student stud = new Student("1", "Rus Mihai", 1, "rm@yahoo.com", "Prof. Maria");
+        try {
+            studentRepo.save(stud);
+            studentRepo.save(stud);
+        } catch (Exception e) {
+            assertEquals(studentRepo.size(), 0);
+        }
+        assertEquals(studentRepo.size(), 1);
     }
 
     @Test
     public void addStudent_TC4() {
+        studentRepo = new StudentRepo(studentValidator);
+        Student stud = new Student("", "Rus Mihai", 1, "rm@yahoo.com", "Prof. Maria");
+        try {
+            studentRepo.save(stud);
+            // if error was not thrown => is not correct since the id cannot be empty
+            fail();
+        } catch (ValidatorException e) {
+            // student with no id should not be added
+            assertEquals(studentRepo.size(), 0);
+        }
     }
 
     @Test
     public void addStudent_TC5() {
+        studentRepo = new StudentRepo(studentValidator);
+        Student stud = new Student("1", "8", 1, "rm@yahoo.com", "Prof. Maria");
+        try {
+            studentRepo.save(stud);
+            // if error was not thrown => is not correct since the name cannot be a number
+            fail();
+        } catch (Exception e) {
+            // student with no valid name should not be added
+            assertEquals(studentRepo.size(), 0);
+        }
     }
 
     @Test
     public void addStudent_TC6() {
+        studentRepo = new StudentRepo(studentValidator);
+        Student stud = new Student("1", "", 1, "rm@yahoo.com", "Prof. Maria");
+        try {
+            studentRepo.save(stud);
+            // if error was not thrown => is not correct since the name cannot be empty
+            fail();
+        } catch (ValidatorException e) {
+            // student with no name should not be added
+            assertEquals(studentRepo.size(), 0);
+        }
     }
 
     @Test
     public void addStudent_TC7() {
+        studentRepo = new StudentRepo(studentValidator);
+        Student stud = new Student("1", null, 1, "rm@yahoo.com", "Prof. Maria");
+        try {
+            studentRepo.save(stud);
+            // if error was not thrown => is not correct since the name cannot be null
+            fail();
+        } catch (Exception e) {
+            // student with no name should not be added
+            assertEquals(studentRepo.size(), 0);
+        }
     }
 
     @Test
     public void addStudent_TC8() {
+        studentRepo = new StudentRepo(studentValidator);
+        Student stud = new Student("1", "Rus Mihai", -1, "rm@yahoo.com", "Prof. Maria");
+        try {
+            studentRepo.save(stud);
+            // if error was not thrown => is not correct since the group cannot be less than 0
+            fail();
+        } catch (ValidatorException e) {
+            // student with group less than 0 should not be added
+            assertEquals(studentRepo.size(), 0);
+        }
     }
 
     @Test
     public void addStudent_TC9() {
+        studentRepo = new StudentRepo(studentValidator);
+        Student stud = new Student("1", "Rus Mihai", 0, "rm@yahoo.com", "Prof. Maria");
+        try {
+            studentRepo.save(stud);
+            // if error was not thrown => is not correct since the group cannot be 0
+            fail();
+        } catch (ValidatorException e) {
+            // student with group 0 should not be added
+            assertEquals(studentRepo.size(), 0);
+        }
     }
 
     @Test

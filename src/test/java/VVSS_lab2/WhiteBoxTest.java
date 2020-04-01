@@ -11,7 +11,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class WhiteBoxTesting {
+public class WhiteBoxTest {
 
     private TemaLabRepo temaLabRepo;
     private TemaLabValidator temaLabValidator;

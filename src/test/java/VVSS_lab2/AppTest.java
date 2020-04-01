@@ -303,33 +303,33 @@ public class AppTest {
     }
 
 
-    @Test
-    public void addAssignment_TC1() {
-
-        TemaLab temaLab1 = new TemaLab(1,"first homework",5,4);
-        TemaLab temaLab2 = new TemaLab(1,"second homework",7,5);
-
-        try {
-            temaLabRepo.save(temaLab1);
-            assertEquals(temaLabRepo.size(), 1);
-
-            temaLabRepo.save(temaLab2);
-            assertEquals(temaLabRepo.size(), 1); // homework with same id was not added
-
-        } catch (ValidatorException e) {
-            fail();
-        }
-        assertTrue(true);
-    }
-
-    @Test
-    public void addAssignment_TC2(){
-        try {
-            temaLabRepo.save(null);
-            fail(); // null object should not be added
-
-        } catch (Exception e) {
-            assertEquals(temaLabRepo.size(), 0);
-        }
-    }
+//    @Test
+//    public void addAssignment_TC1() {
+//
+//        TemaLab temaLab1 = new TemaLab(1,"first homework",5,4);
+//        TemaLab temaLab2 = new TemaLab(1,"second homework",7,5);
+//
+//        try {
+//            temaLabRepo.save(temaLab1);
+//            assertEquals(temaLabRepo.size(), 1);
+//
+//            temaLabRepo.save(temaLab2);
+//            assertEquals(temaLabRepo.size(), 1); // homework with same id was not added
+//
+//        } catch (ValidatorException e) {
+//            fail();
+//        }
+//        assertTrue(true);
+//    }
+//
+//    @Test
+//    public void addAssignment_TC2(){
+//        try {
+//            temaLabRepo.save(null);
+//            fail(); // null object should not be added
+//
+//        } catch (Exception e) {
+//            assertEquals(temaLabRepo.size(), 0);
+//        }
+//    }
 }

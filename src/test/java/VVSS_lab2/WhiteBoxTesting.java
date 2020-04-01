@@ -46,13 +46,11 @@ public class WhiteBoxTesting {
 
     @Test
     public void addAssignment_TC2(){
-        TemaLab temaLab = new TemaLab(1,"",5,4);
-
         try {
-            temaLabRepo.save(temaLab);
-            fail(); // homework with empty description should not be added
+            temaLabRepo.save(null);
+            fail(); // null object should not be added
 
-        } catch (ValidatorException e) {
+        } catch (Exception e) {
             assertEquals(temaLabRepo.size(), 0);
         }
     }

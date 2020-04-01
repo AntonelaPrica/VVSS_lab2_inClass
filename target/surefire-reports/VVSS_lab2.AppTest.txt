@@ -1,4 +1,32 @@
 -------------------------------------------------------------------------------
 Test set: VVSS_lab2.AppTest
 -------------------------------------------------------------------------------
-Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.063 s - in VVSS_lab2.AppTest
+Tests run: 19, Failures: 7, Errors: 0, Skipped: 0, Time elapsed: 0.062 s <<< FAILURE! - in VVSS_lab2.AppTest
+addStudent_TC5(VVSS_lab2.AppTest)  Time elapsed: 0.007 s  <<< FAILURE!
+java.lang.AssertionError
+	at VVSS_lab2.AppTest.addStudent_TC5(AppTest.java:127)
+
+addStudent_TC10(VVSS_lab2.AppTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError
+	at VVSS_lab2.AppTest.addStudent_TC10(AppTest.java:197)
+
+addStudent_TC11(VVSS_lab2.AppTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError
+	at VVSS_lab2.AppTest.addStudent_TC11(AppTest.java:213)
+
+addStudent_TC13(VVSS_lab2.AppTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError
+	at VVSS_lab2.AppTest.addStudent_TC13(AppTest.java:239)
+
+addStudent_TC15(VVSS_lab2.AppTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError
+	at VVSS_lab2.AppTest.addStudent_TC15(AppTest.java:265)
+
+addStudent_TC16(VVSS_lab2.AppTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError
+	at VVSS_lab2.AppTest.addStudent_TC16(AppTest.java:278)
+
+addStudent_TC17(VVSS_lab2.AppTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError
+	at VVSS_lab2.AppTest.addStudent_TC17(AppTest.java:291)
+

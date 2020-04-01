@@ -1,10 +1,13 @@
 package VVSS_lab2;
 
 import VVSS_lab2.Domain.Student;
+import VVSS_lab2.Domain.TemaLab;
 import VVSS_lab2.Exceptions.ValidatorException;
 import VVSS_lab2.Repository.MemoryRepository.StudentRepo;
+import VVSS_lab2.Repository.MemoryRepository.TemaLabRepo;
 import VVSS_lab2.Service.TxtFileService.StudentService;
 import VVSS_lab2.Validator.StudentValidator;
+import VVSS_lab2.Validator.TemaLabValidator;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,14 +24,18 @@ public class AppTest {
      */
     private StudentRepo studentRepo;
     private StudentValidator studentValidator;
-
-    private StudentService studentService;
+    
+    private TemaLabRepo temaLabRepo;
+    private TemaLabValidator temaLabValidator;
 
     @Before
     public void setUp()
     {
         studentValidator = new StudentValidator();
         studentRepo = new StudentRepo(studentValidator);
+
+        temaLabValidator = new TemaLabValidator();
+        temaLabRepo = new TemaLabRepo(temaLabValidator);
     }
 
     @Test
@@ -292,6 +299,37 @@ public class AppTest {
         } catch (ValidatorException e) {
             // student with empty id should not be added
             assertEquals(studentRepo.size(), 0);
+        }
+    }
+
+
+    @Test
+    public void addAssignment_TC1() {
+
+        TemaLab temaLab1 = new TemaLab(1,"first homework",5,4);
+        TemaLab temaLab2 = new TemaLab(1,"second homework",7,5);
+
+        try {
+            temaLabRepo.save(temaLab1);
+            assertEquals(temaLabRepo.size(), 1);
+
+            temaLabRepo.save(temaLab2);
+            assertEquals(temaLabRepo.size(), 1); // homework with same id was not added
+
+        } catch (ValidatorException e) {
+            fail();
+        }
+        assertTrue(true);
+    }
+
+    @Test
+    public void addAssignment_TC2(){
+        try {
+            temaLabRepo.save(null);
+            fail(); // null object should not be added
+
+        } catch (Exception e) {
+            assertEquals(temaLabRepo.size(), 0);
         }
     }
 }

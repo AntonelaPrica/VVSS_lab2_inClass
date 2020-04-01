@@ -16,8 +16,6 @@ public class WhiteBoxTesting {
     private TemaLabRepo temaLabRepo;
     private TemaLabValidator temaLabValidator;
 
-    private TemaLabService temaLabService;
-
     @Before
     public void setUp()
     {

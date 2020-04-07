@@ -38,39 +38,39 @@ public class AppTest {
         temaLabRepo = new TemaLabRepo(temaLabValidator);
     }
 
-//    @Test
-//    public void addStudentTest() {
-//
-//        Student student1 = new Student("1", "Stud1", 10, "stud1@test.com", "Prof");
-//        Student student2 = new Student("1", "Stud2", 11, "stud2@test.com", "Prof");
-//
-//        try {
-//            studentRepo.save(student1);
-//            assertEquals(studentRepo.size(), 1);
-//
-//            studentRepo.save(student2);
-//            assertEquals(studentRepo.size(), 1); // student with same id was not added
-//
-//        } catch (ValidatorException e) {
-//            fail();
-//        }
-//
-//        assertTrue(true);
-//    }
-//
-//    @Test
-//    public void addStudentTest2() {
-//
-//        Student student = new Student("", "Stud1", 10, "stud1@test.com", "Prof");
-//        try {
-//            studentRepo.save(student);
-//            // if error was not thrown => is not correct since id is empty
-//            fail();
-//        } catch (ValidatorException e) {
-//            // student with empty id should not be added
-//            assertEquals(studentRepo.size(), 0);
-//        }
-//    }
+    @Test
+    public void addStudentTest() {
+
+        Student student1 = new Student("1", "Stud1", 10, "stud1@test.com", "Prof");
+        Student student2 = new Student("1", "Stud2", 11, "stud2@test.com", "Prof");
+
+        try {
+            studentRepo.save(student1);
+            assertEquals(studentRepo.size(), 1);
+
+            studentRepo.save(student2);
+            assertEquals(studentRepo.size(), 1); // student with same id was not added
+
+        } catch (ValidatorException e) {
+            fail();
+        }
+
+        assertTrue(true);
+    }
+
+    @Test
+    public void addStudentTest2() {
+
+        Student student = new Student("", "Stud1", 10, "stud1@test.com", "Prof");
+        try {
+            studentRepo.save(student);
+            // if error was not thrown => is not correct since id is empty
+            fail();
+        } catch (ValidatorException e) {
+            // student with empty id should not be added
+            assertEquals(studentRepo.size(), 0);
+        }
+    }
 
     @Test
     public void addStudent_TC1() {

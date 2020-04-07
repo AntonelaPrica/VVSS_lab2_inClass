@@ -31,7 +31,7 @@ public class StudentValidator implements IValidator<Student> {
         }
 
         // Check also email format
-        if(s.getEmail()==null  || s.getEmail().equals("") || !s.getEmail().matches("[a-z]*@[a-z]*\\.[a-z]*")){
+        if(s.getEmail()==null  || s.getEmail().equals("") || !s.getEmail().matches("[a-z0-9]*@[a-z0-9]*\\.[a-z]*")){
             //throw new ValidatorException("Email invalid\n");
             errors+="Email invalid\n";
         } else {

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="VVSS_lab2.AppTest" time="0.047" tests="21" errors="0" skipped="0" failures="7">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="VVSS_lab2.AppTest" time="0.071" tests="19" errors="0" skipped="0" failures="0">
   <properties>
-    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
-    <property name="java.vm.version" value="11.0.4+10-b304.69"/>
-    <property name="sun.boot.library.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\jbr\bin"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="java.vm.version" value="13+33"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-13\bin"/>
     <property name="maven.multiModuleProjectDirectory" value="D:\ANUL 3\SEMESTRUL 2\VVSS\LAB 2\V03\VVSS_lab2_inClass"/>
-    <property name="java.vm.vendor" value="JetBrains s.r.o"/>
-    <property name="java.vendor.url" value="https://www.jetbrains.com/"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
     <property name="path.separator" value=";"/>
-    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="user.script" value=""/>
     <property name="user.country" value="US"/>
@@ -17,8 +17,7 @@
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="D:\ANUL 3\SEMESTRUL 2\VVSS\LAB 2\V03\VVSS_lab2_inClass"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
-    <property name="java.runtime.version" value="11.0.4+10-b304.69"/>
-    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.runtime.version" value="13+33"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.io.tmpdir" value="C:\Users\ALEXAN~1\AppData\Local\Temp\"/>
     <property name="line.separator" value="&#10;"/>
@@ -28,87 +27,54 @@
     <property name="maven.ext.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\plugins\maven\lib\maven-event-listener.jar"/>
     <property name="classworlds.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\plugins\maven\lib\maven3\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\jbr\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;D:\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\PostgreSQL\12\bin;C:\Program Files\PostgreSQL\12\lib;C:\Program Files (x86)\CodeBlocks\MinGW\bin;C:\Program Files (x86)\GnuWin32\bin;C:\Program Files\WSO2\Stream Processor\4.4.0\bin\..\bin;D:\Matlab\runtime\win64;D:\Matlab\bin;C:\Users\Alexandra\AppData\Local\Microsoft\WindowsApps;C:\Users\Alexandra\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Alexandra\Spark\bin;C:\winutils\bin;C:\Program Files\Java\jdk1.8.0_221\bin;C:\Program Files\nodejs;C:\Users\Alexandra\AppData\Roaming\npm;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-13\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;D:\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\PostgreSQL\12\bin;C:\Program Files\PostgreSQL\12\lib;C:\Program Files (x86)\CodeBlocks\MinGW\bin;C:\Program Files (x86)\GnuWin32\bin;C:\Program Files\WSO2\Stream Processor\4.4.0\bin\..\bin;D:\Matlab\runtime\win64;D:\Matlab\bin;C:\Users\Alexandra\AppData\Local\Microsoft\WindowsApps;C:\Users\Alexandra\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Alexandra\Spark\bin;C:\winutils\bin;C:\Program Files\Java\jdk1.8.0_221\bin;C:\Program Files\nodejs;C:\Users\Alexandra\AppData\Roaming\npm;."/>
     <property name="maven.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\plugins\maven\lib\maven3/conf"/>
     <property name="jdk.debug" value="release"/>
-    <property name="java.class.version" value="55.0"/>
+    <property name="java.class.version" value="57.0"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="10.0"/>
     <property name="user.home" value="C:\Users\Alexandra"/>
-    <property name="user.timezone" value="Europe/Athens"/>
-    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="user.timezone" value="Europe/Bucharest"/>
     <property name="file.encoding" value="UTF-8"/>
-    <property name="java.specification.version" value="11"/>
+    <property name="java.specification.version" value="13"/>
+    <property name="idea.version2019.2.4" value="true"/>
     <property name="user.name" value="Vero"/>
-    <property name="idea.version2019.2.3" value="true"/>
     <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\plugins\maven\lib\maven3\boot\plexus-classworlds-2.6.0.jar"/>
-    <property name="java.vm.specification.version" value="11"/>
+    <property name="java.vm.specification.version" value="13"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version2019.2.3 test"/>
-    <property name="java.home" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\jbr"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version2019.2.4 test"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-13"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="java.version" value="11.0.4"/>
-    <property name="java.vendor" value="JetBrains s.r.o"/>
+    <property name="java.version" value="13"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
     <property name="maven.home" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\plugins\maven\lib\maven3"/>
     <property name="file.separator" value="\"/>
-    <property name="java.version.date" value="2019-07-16"/>
-    <property name="java.vendor.url.bug" value="https://youtrack.jetbrains.com"/>
+    <property name="java.version.date" value="2019-09-17"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="addAssignment_TC1" classname="VVSS_lab2.AppTest" time="0.003"/>
-  <testcase name="addAssignment_TC2" classname="VVSS_lab2.AppTest" time="0"/>
-  <testcase name="addStudentTest" classname="VVSS_lab2.AppTest" time="0"/>
+  <testcase name="addStudentTest" classname="VVSS_lab2.AppTest" time="0.007"/>
   <testcase name="addStudent_TC1" classname="VVSS_lab2.AppTest" time="0"/>
-  <testcase name="addStudent_TC2" classname="VVSS_lab2.AppTest" time="0.001"/>
+  <testcase name="addStudent_TC2" classname="VVSS_lab2.AppTest" time="0"/>
   <testcase name="addStudent_TC3" classname="VVSS_lab2.AppTest" time="0"/>
-  <testcase name="addStudent_TC4" classname="VVSS_lab2.AppTest" time="0"/>
-  <testcase name="addStudent_TC5" classname="VVSS_lab2.AppTest" time="0.001">
-    <failure type="java.lang.AssertionError">java.lang.AssertionError
-	at VVSS_lab2.AppTest.addStudent_TC5(AppTest.java:134)
-</failure>
-  </testcase>
-  <testcase name="addStudent_TC6" classname="VVSS_lab2.AppTest" time="0"/>
-  <testcase name="addStudent_TC7" classname="VVSS_lab2.AppTest" time="0"/>
-  <testcase name="addStudent_TC8" classname="VVSS_lab2.AppTest" time="0.001"/>
-  <testcase name="addStudent_TC9" classname="VVSS_lab2.AppTest" time="0"/>
+  <testcase name="addStudent_TC4" classname="VVSS_lab2.AppTest" time="0.001"/>
+  <testcase name="addStudent_TC5" classname="VVSS_lab2.AppTest" time="0"/>
+  <testcase name="addStudent_TC6" classname="VVSS_lab2.AppTest" time="0.001"/>
+  <testcase name="addStudent_TC7" classname="VVSS_lab2.AppTest" time="0.001"/>
+  <testcase name="addStudent_TC8" classname="VVSS_lab2.AppTest" time="0"/>
+  <testcase name="addStudent_TC9" classname="VVSS_lab2.AppTest" time="0.001"/>
   <testcase name="addStudentTest2" classname="VVSS_lab2.AppTest" time="0"/>
-  <testcase name="addStudent_TC10" classname="VVSS_lab2.AppTest" time="0">
-    <failure type="java.lang.AssertionError">java.lang.AssertionError
-	at VVSS_lab2.AppTest.addStudent_TC10(AppTest.java:204)
-</failure>
-  </testcase>
-  <testcase name="addStudent_TC11" classname="VVSS_lab2.AppTest" time="0.001">
-    <failure type="java.lang.AssertionError">java.lang.AssertionError
-	at VVSS_lab2.AppTest.addStudent_TC11(AppTest.java:220)
-</failure>
-  </testcase>
-  <testcase name="addStudent_TC12" classname="VVSS_lab2.AppTest" time="0.001"/>
-  <testcase name="addStudent_TC13" classname="VVSS_lab2.AppTest" time="0">
-    <failure type="java.lang.AssertionError">java.lang.AssertionError
-	at VVSS_lab2.AppTest.addStudent_TC13(AppTest.java:246)
-</failure>
-  </testcase>
-  <testcase name="addStudent_TC14" classname="VVSS_lab2.AppTest" time="0.001"/>
-  <testcase name="addStudent_TC15" classname="VVSS_lab2.AppTest" time="0">
-    <failure type="java.lang.AssertionError">java.lang.AssertionError
-	at VVSS_lab2.AppTest.addStudent_TC15(AppTest.java:272)
-</failure>
-  </testcase>
-  <testcase name="addStudent_TC16" classname="VVSS_lab2.AppTest" time="0">
-    <failure type="java.lang.AssertionError">java.lang.AssertionError
-	at VVSS_lab2.AppTest.addStudent_TC16(AppTest.java:285)
-</failure>
-  </testcase>
-  <testcase name="addStudent_TC17" classname="VVSS_lab2.AppTest" time="0">
-    <failure type="java.lang.AssertionError">java.lang.AssertionError
-	at VVSS_lab2.AppTest.addStudent_TC17(AppTest.java:298)
-</failure>
-  </testcase>
+  <testcase name="addStudent_TC10" classname="VVSS_lab2.AppTest" time="0"/>
+  <testcase name="addStudent_TC11" classname="VVSS_lab2.AppTest" time="0"/>
+  <testcase name="addStudent_TC12" classname="VVSS_lab2.AppTest" time="0"/>
+  <testcase name="addStudent_TC13" classname="VVSS_lab2.AppTest" time="0"/>
+  <testcase name="addStudent_TC14" classname="VVSS_lab2.AppTest" time="0"/>
+  <testcase name="addStudent_TC15" classname="VVSS_lab2.AppTest" time="0"/>
+  <testcase name="addStudent_TC16" classname="VVSS_lab2.AppTest" time="0"/>
+  <testcase name="addStudent_TC17" classname="VVSS_lab2.AppTest" time="0"/>
 </testsuite>

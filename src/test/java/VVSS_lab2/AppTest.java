@@ -38,39 +38,39 @@ public class AppTest {
         temaLabRepo = new TemaLabRepo(temaLabValidator);
     }
 
-    @Test
-    public void addStudentTest() {
-
-        Student student1 = new Student("1", "Stud1", 10, "stud1@test.com", "Prof");
-        Student student2 = new Student("1", "Stud2", 11, "stud2@test.com", "Prof");
-
-        try {
-            studentRepo.save(student1);
-            assertEquals(studentRepo.size(), 1);
-
-            studentRepo.save(student2);
-            assertEquals(studentRepo.size(), 1); // student with same id was not added
-
-        } catch (ValidatorException e) {
-            fail();
-        }
-
-        assertTrue(true);
-    }
-
-    @Test
-    public void addStudentTest2() {
-
-        Student student = new Student("", "Stud1", 10, "stud1@test.com", "Prof");
-        try {
-            studentRepo.save(student);
-            // if error was not thrown => is not correct since id is empty
-            fail();
-        } catch (ValidatorException e) {
-            // student with empty id should not be added
-            assertEquals(studentRepo.size(), 0);
-        }
-    }
+//    @Test
+//    public void addStudentTest() {
+//
+//        Student student1 = new Student("1", "Stud1", 10, "stud1@test.com", "Prof");
+//        Student student2 = new Student("1", "Stud2", 11, "stud2@test.com", "Prof");
+//
+//        try {
+//            studentRepo.save(student1);
+//            assertEquals(studentRepo.size(), 1);
+//
+//            studentRepo.save(student2);
+//            assertEquals(studentRepo.size(), 1); // student with same id was not added
+//
+//        } catch (ValidatorException e) {
+//            fail();
+//        }
+//
+//        assertTrue(true);
+//    }
+//
+//    @Test
+//    public void addStudentTest2() {
+//
+//        Student student = new Student("", "Stud1", 10, "stud1@test.com", "Prof");
+//        try {
+//            studentRepo.save(student);
+//            // if error was not thrown => is not correct since id is empty
+//            fail();
+//        } catch (ValidatorException e) {
+//            // student with empty id should not be added
+//            assertEquals(studentRepo.size(), 0);
+//        }
+//    }
 
     @Test
     public void addStudent_TC1() {
@@ -104,10 +104,10 @@ public class AppTest {
         try {
             studentRepo.save(stud);
             studentRepo.save(stud);
+            fail();
         } catch (Exception e) {
-            assertEquals(studentRepo.size(), 0);
+            assertEquals(studentRepo.size(), 1);
         }
-        assertEquals(studentRepo.size(), 1);
     }
 
     @Test
@@ -214,13 +214,12 @@ public class AppTest {
         Student stud_new = new Student("2", "Rus Maria", 936, "rm@yahoo.com", "Prof. Maria");
         try {
             studentRepo.save(stud);
-
             studentRepo.save(stud_new);
             // if error was not thrown => is not correct since the email already exists
             fail();
         } catch (ValidatorException e) {
-            // student with empty id should not be added
-            assertEquals(studentRepo.size(), 0);
+            // second student with the same email should not be added
+            assertEquals(studentRepo.size(), 1);
         }
     }
     @Test
@@ -275,6 +274,7 @@ public class AppTest {
             assertEquals(studentRepo.size(), 0);
         }
     }
+
     @Test
     public void addStudent_TC16() {
         studentRepo = new StudentRepo(studentValidator);
@@ -288,6 +288,7 @@ public class AppTest {
             assertEquals(studentRepo.size(), 0);
         }
     }
+
     @Test
     public void addStudent_TC17() {
         studentRepo = new StudentRepo(studentValidator);
@@ -302,34 +303,4 @@ public class AppTest {
         }
     }
 
-
-//    @Test
-//    public void addAssignment_TC1() {
-//
-//        TemaLab temaLab1 = new TemaLab(1,"first homework",5,4);
-//        TemaLab temaLab2 = new TemaLab(1,"second homework",7,5);
-//
-//        try {
-//            temaLabRepo.save(temaLab1);
-//            assertEquals(temaLabRepo.size(), 1);
-//
-//            temaLabRepo.save(temaLab2);
-//            assertEquals(temaLabRepo.size(), 1); // homework with same id was not added
-//
-//        } catch (ValidatorException e) {
-//            fail();
-//        }
-//        assertTrue(true);
-//    }
-//
-//    @Test
-//    public void addAssignment_TC2(){
-//        try {
-//            temaLabRepo.save(null);
-//            fail(); // null object should not be added
-//
-//        } catch (Exception e) {
-//            assertEquals(temaLabRepo.size(), 0);
-//        }
-//    }
 }

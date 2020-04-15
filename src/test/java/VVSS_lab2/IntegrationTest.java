@@ -1,5 +1,6 @@
 package VVSS_lab2;
 
+import VVSS_lab2.Domain.Nota;
 import VVSS_lab2.Domain.Student;
 import VVSS_lab2.Domain.TemaLab;
 import VVSS_lab2.Exceptions.ValidatorException;
@@ -68,12 +69,21 @@ public class IntegrationTest {
     @Test
     public void add_TC3()
     {
-
+        Nota nota = new Nota(1,"1",1,10);
+        try {
+            notaRepo.save(nota);
+            assertEquals(notaRepo.size(), 1);
+        }catch (ValidatorException v)
+        {
+            fail();
+        }
     }
 
     @Test
     public void add_TC4()
     {
-
+        add_TC1();
+        add_TC2();
+        add_TC3();
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="VVSS_lab2.AppTest" time="0.161" tests="19" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="VVSS_lab2.IntegrationTest" time="0" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="13+33"/>
@@ -58,23 +58,8 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="addStudentTest" classname="VVSS_lab2.AppTest" time="0.016"/>
-  <testcase name="addStudent_TC1" classname="VVSS_lab2.AppTest" time="0"/>
-  <testcase name="addStudent_TC2" classname="VVSS_lab2.AppTest" time="0"/>
-  <testcase name="addStudent_TC3" classname="VVSS_lab2.AppTest" time="0"/>
-  <testcase name="addStudent_TC4" classname="VVSS_lab2.AppTest" time="0"/>
-  <testcase name="addStudent_TC5" classname="VVSS_lab2.AppTest" time="0"/>
-  <testcase name="addStudent_TC6" classname="VVSS_lab2.AppTest" time="0"/>
-  <testcase name="addStudent_TC7" classname="VVSS_lab2.AppTest" time="0.001"/>
-  <testcase name="addStudent_TC8" classname="VVSS_lab2.AppTest" time="0.001"/>
-  <testcase name="addStudent_TC9" classname="VVSS_lab2.AppTest" time="0.001"/>
-  <testcase name="addStudentTest2" classname="VVSS_lab2.AppTest" time="0"/>
-  <testcase name="addStudent_TC10" classname="VVSS_lab2.AppTest" time="0.001"/>
-  <testcase name="addStudent_TC11" classname="VVSS_lab2.AppTest" time="0.001"/>
-  <testcase name="addStudent_TC12" classname="VVSS_lab2.AppTest" time="0"/>
-  <testcase name="addStudent_TC13" classname="VVSS_lab2.AppTest" time="0.001"/>
-  <testcase name="addStudent_TC14" classname="VVSS_lab2.AppTest" time="0.001"/>
-  <testcase name="addStudent_TC15" classname="VVSS_lab2.AppTest" time="0"/>
-  <testcase name="addStudent_TC16" classname="VVSS_lab2.AppTest" time="0.001"/>
-  <testcase name="addStudent_TC17" classname="VVSS_lab2.AppTest" time="0"/>
+  <testcase name="add_TC1" classname="VVSS_lab2.IntegrationTest" time="0"/>
+  <testcase name="add_TC2" classname="VVSS_lab2.IntegrationTest" time="0"/>
+  <testcase name="add_TC3" classname="VVSS_lab2.IntegrationTest" time="0"/>
+  <testcase name="add_TC4" classname="VVSS_lab2.IntegrationTest" time="0"/>
 </testsuite>
